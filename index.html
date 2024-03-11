@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Maze</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- aggiungere dark mode -->
+    <section id="container">
+        <div id="timer">00:00.00</div>
+
+        <div id="dark_mode">
+        <h3>Dark Mode</h3>
+        <label class="switch">
+            <input type="checkbox" onclick="swtichMode()">
+            <span class="slider"></span>
+        </label>
+        </div>
+    </section>
+
+    <main> <!-- maze effettivo -->
+
+        <!-- 11 x 11 -->
+        <div class="maze_cell right" id="0"></div>
+        <div class="maze_cell right left" id="1"></div>
+        <div class="maze_cell left right" id="2"></div>
+        <div class="maze_cell left right down" id="3"></div>
+        <div class="maze_cell left down" id="4"></div>
+        <div class="maze_cell down right" id="5"></div>
+        <div class="maze_cell left right" id="6"></div>
+        <div class="maze_cell left right" id="7"></div>
+        <div class="maze_cell left" id="8"></div>
+        <div class="maze_cell down" id="9"></div>
+        <div class="maze_cell down" id="10"></div>
+        <div class="maze_cell right" id="11"></div>
+        <div class="maze_cell left right" id="12"></div>
+        <div class="maze_cell left right down" id="13"></div>
+        <div class="maze_cell up left down" id="14"></div>
+        <div class="maze_cell up right" id="15"></div>
+        <div class="maze_cell left up" id="16"></div>
+        <div class="maze_cell right" id="17"></div>
+        <div class="maze_cell left down right" id="18"></div>
+        <div class="maze_cell left right" id="19"></div>
+        <div class="maze_cell up left down" id="20"></div>
+        <div class="maze_cell up down" id="21"></div>
+        <div class="maze_cell right down" id="22"></div>
+        <div class="maze_cell left right" id="23"></div>
+        <div class="maze_cell up left down" id="24"></div>
+        <div class="maze_cell up right" id="25"></div>
+        <div class="maze_cell left right" id="26"></div>
+        <div class="maze_cell left" id="27"></div>
+        <div class="maze_cell down right" id="28"></div>
+        <div class="maze_cell left right up" id="29"></div>
+        <div class="maze_cell left down" id="30"></div>
+        <div class="maze_cell up" id="31"></div>
+        <div class="maze_cell up down" id="32"></div>
+        <div class="maze_cell up right down" id="33"></div>
+        <div class="maze_cell left" id="34"></div>
+        <div class="maze_cell up down" id="35"></div>
+        <div class="maze_cell down" id="36"></div>
+        <div class="maze_cell right down" id="37"></div>
+        <div class="maze_cell left right" id="38"></div>
+        <div class="maze_cell left up" id="39"></div>
+        <div class="maze_cell down" id="40"></div>
+        <div class="maze_cell up down" id="41"></div>
+        <div class="maze_cell right down" id="42"></div>
+        <div class="maze_cell left up" id="43"></div>
+        <div class="maze_cell up down" id="44"></div>
+        <div class="maze_cell right down" id="45"></div>
+        <div class="maze_cell right up left" id="46"></div>
+        <div class="maze_cell up left" id="47"></div>
+        <div class="maze_cell up down" id="48"></div>
+        <div class="maze_cell down" id="49"></div>
+        <div class="maze_cell right down" id="50"></div>
+        <div class="maze_cell right left up down" id="51"></div>
+        <div class="maze_cell left up right" id="52"></div>
+        <div class="maze_cell up left down" id="53"></div>
+        <div class="maze_cell down" id="54"></div>
+        <div class="maze_cell up" id="55"></div>
+        <div class="maze_cell up down" id="56"></div>
+        <div class="maze_cell right down" id="57"></div>
+        <div class="maze_cell left right" id="58"></div>
+        <div class="maze_cell left up right" id="59"></div>
+        <div class="maze_cell left up down" id="60"></div>
+        <div class="maze_cell up down" id="61"></div>
+        <div class="maze_cell up right" id="62"></div>
+        <div class="maze_cell left down" id="63"></div>
+        <div class="maze_cell up" id="64"></div>
+        <div class="maze_cell up down" id="65"></div>
+        <div class="maze_cell right down" id="66"></div>
+        <div class="maze_cell up left down" id="67"></div>
+        <div class="maze_cell up down" id="68"></div>
+        <div class="maze_cell right" id="69"></div>
+        <div class="maze_cell left down" id="70"></div>
+        <div class="maze_cell up" id="71"></div>
+        <div class="maze_cell up down" id="72"></div>
+        <div class="maze_cell down" id="73"></div>
+        <div class="maze_cell up right" id="74"></div>
+        <div class="maze_cell left right" id="75"></div>
+        <div class="maze_cell left up" id="76"></div>
+        <div class="maze_cell up down" id="77"></div>
+        <div class="maze_cell up down" id="78"></div>
+        <div class="maze_cell up right" id="79"></div>
+        <div class="maze_cell left down" id="80"></div>
+        <div class="maze_cell up down" id="81"></div>
+        <div class="maze_cell right down" id="82"></div>
+        <div class="maze_cell up left right" id="83"></div>
+        <div class="maze_cell up left" id="84"></div>
+        <div class="maze_cell right down" id="85"></div>
+        <div class="maze_cell left right" id="86"></div>
+        <div class="maze_cell left down" id="87"></div>
+        <div class="maze_cell up down" id="88"></div>
+        <div class="maze_cell up down right" id="89"></div>
+        <div class="maze_cell left right" id="90"></div>
+        <div class="maze_cell up left" id="91"></div>
+        <div class="maze_cell up down" id="92"></div>
+        <div class="maze_cell up down" id="93"></div>
+        <div class="maze_cell down" id="94"></div>
+        <div class="maze_cell down right" id="95"></div>
+        <div class="maze_cell left up" id="96"></div>
+        <div class="maze_cell right" id="97"></div>
+        <div class="maze_cell left up" id="98"></div>
+        <div class="maze_cell up down" id="99"></div>
+        <div class="maze_cell up down" id="100"></div>
+        <div class="maze_cell down right" id="101"></div>
+        <div class="maze_cell left" id="102"></div>
+        <div class="maze_cell up right" id="103"></div>
+        <div class="maze_cell left up down" id="104"></div>
+        <div class="maze_cell up right" id="105"></div>
+        <div class="maze_cell up down left right" id="106"></div>
+        <div class="maze_cell left down right" id="107"></div>
+        <div class="maze_cell left right" id="108"></div>
+        <div class="maze_cell left" id="109"></div>
+        <div class="maze_cell up" id="110"></div>
+        <div class="maze_cell up right" id="111"></div>
+        <div class="maze_cell left up" id="112"></div>
+        <div class="maze_cell right" id="113"></div>
+        <div class="maze_cell left right" id="114"></div>
+        <div class="maze_cell left up right" id="115"></div>
+        <div class="maze_cell left right" id="116"></div>
+        <div class="maze_cell left up" id="117"></div>
+        <div class="maze_cell up right" id="118"></div>
+        <div class="maze_cell left right" id="119"></div>
+        <div class="maze_cell left" id="120"></div>
+
+    
+    </main>
+
+    <div id="vittoria">
+        <section>
+            <h1>Hai vinto!</h1>
+            <p>Congratulazioni, il tuo tempo e' stato di: </p>
+            <div id="timer_value">00:00.00</div>
+            <button id="restart_button" onclick="restart()">Restart</button>
+        </section>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: antiquewhite;
+    text-align: center;
+}   
+
+main {
+    margin: auto;
+    display: grid;
+    grid-template-columns:  repeat(11, 1fr);
+}
+
+#timer {
+    font-size: 4vh;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 1%;
+    display: inline-block;
+    margin-right: -7.8%;
+    margin-left: auto; 
+}
+
+#restart_button {
+    font-size: 2vh;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#vittoria {
+    margin: auto;
+    text-align: center;
+    height: 20vh;
+    aspect-ratio: 3/1;
+    background-color: bisque;
+    border-radius: 3.5vh; 
+    align-items: center;
+    display: none;
+}
+
+h1 {
+    font-family: "Caveat", cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h3 {
+    display: inline-block;
+    font-size: 33px;
+    margin-right: 10px;
+}
+
+#dark_mode {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-top: 25px;
+    margin-right: 15px;
+}
+
+p, #timer_value {
+    font-size: 2rem;
+    font-family: "Zilla Slab", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+section {
+    margin-top: 0.8rem;
+}
+
+#restart_button {
+    margin-top: 0.8rem;
+    background-color: coral;
+    height: 3rem;
+    aspect-ratio: 2.5/1;
+    border-radius: 1rem;
+}
+
+#restart_button:hover {
+    transform: translateY(-2px); 
+    box-shadow: 1px 2px;
+}
+
+.maze_cell {
+    border: 5px solid black;
+    background-color: white;
+    height: 5vh;
+    aspect-ratio: 1/1;
+}
+
+.up { /*   classe per definire dove e' possibile spostarsi */
+    border-top: white;
+}
+
+.down {
+    border-bottom: white;
+}
+
+.left {
+    border-left: white;
+}
+
+.right {
+    border-right: white;
+}
+
+/* switch (https://uiverse.io/RaspberryBee/calm-deer-81) */
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(182, 182, 182);
+    transition: .4s;
+    border-radius: 10px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 8px;
+    left: 0.3em;
+    bottom: 0.3em;
+    transform: rotate(270deg);
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #21cc4c;
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(1.5em);
+  }
